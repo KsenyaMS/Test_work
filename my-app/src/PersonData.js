@@ -13,9 +13,9 @@ const PersonData = () => {
         <PageHeader title="Карточка водителя">
         </PageHeader>
         <Divider />
-        <Row>
-            <Col  span={2}>
-                <Avatar margin="8" size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+        <Row >
+            <Col span={2}>
+                <Avatar style={{  marginLeft: 15 }} size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
                 icon={<UserOutlined  />}
                 />
             </Col>
@@ -25,15 +25,15 @@ const PersonData = () => {
             <Col  span={5}>
                 <Text><h4>Ford Transit B722KM790</h4></Text>
             </Col>
-            <Col span={3}>
+            <Col span={3} align='center'>
                 <Text>Балланс</Text>
                 <ZoomButtons value={-70000}/>
             </Col>
-            <Col  span={3}>
+            <Col span={3} align='center'>
                 <Text>Депозит</Text>
-                <ZoomButtons value={70000}/>
+                <ZoomButtons value={70000}  />
             </Col>
-            <Col span={3}>
+            <Col span={3} align='center'>
                 <Text>Свободный балланс</Text>
                 <ZoomButtons value={70000}/>
             </Col>

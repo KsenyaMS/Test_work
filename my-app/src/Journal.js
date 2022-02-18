@@ -1,7 +1,21 @@
 import 'antd/dist/antd.css';
 import { Table, Col, Button } from 'antd';
 
-const StatementOfFines = ({data}) => {
+const Journal = () => {
+    const data = [
+        {
+          key: '1',
+          date: '11.02.2020 12:43',
+          user: 'user1',
+          message: 'Назначены условия работы',
+        },
+        {
+          key: '2',
+          date: '11.02.2020 12:45',
+          user: 'user1',
+          message: 'Назначены условия работы',
+        },
+    ];
     const columns = [
         {
           title: 'Дата',
@@ -11,25 +25,25 @@ const StatementOfFines = ({data}) => {
           background: "#3F3D56"
         },
         {
-          title: 'Сумма',
-          dataIndex: 'amount',
-          key: 'amount',
+          title: 'Пользователь',
+          dataIndex: 'user',
+          key: 'user',
         },
         {
-          title: 'Описание',
-          dataIndex: 'description',
-          key: 'description',
+          title:'Сообщение',
+          dataIndex: 'message',
+          key: 'message',
         },
     ];
-
+   
     return (
       <>
-        <Table style={{ width: 1500, marginTop: 30 }} columns={columns} />
+        <Table style={{ width: 1500, marginTop: 30 }} columns={columns} dataSource={data} />
         <Col span={3} offset={21}>
           <Button size = "large" style={{ background: "white", borderColor: "#DBDBDB", color: "#3F3D56", marginTop: 30 }} shape="round">Отмена</Button>
           <Button size = "large" style={{ background: "#58D3A5", borderColor: "#58D3A5", color: "#FFFFFF", marginTop: 30 }} shape="round">Ок</Button>
         </Col>
-      </>
+    </>
     );
 }
-export default StatementOfFines;
+export default Journal;
