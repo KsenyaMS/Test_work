@@ -1,4 +1,3 @@
-import 'antd/dist/antd.css';
 import { Table, Col, Button } from 'antd';
 
 const Journal = () => {
@@ -40,8 +39,8 @@ const Journal = () => {
       <>
         <Table style={{ width: 1500, marginTop: 30 }} columns={columns} dataSource={data} />
         <Col span={3} offset={21}>
-          <Button size = "large" style={{ background: "white", borderColor: "#DBDBDB", color: "#3F3D56", marginTop: 30 }} shape="round">Отмена</Button>
-          <Button size = "large" style={{ background: "#58D3A5", borderColor: "#58D3A5", color: "#FFFFFF", marginTop: 30 }} shape="round">Ок</Button>
+          <Button size = "large" style={{ background: "white", borderColor: "#DBDBDB", color: "#3F3D56", marginTop: 30 }}>Отмена</Button>
+          <Button size = "large" style={{ background: "#58D3A5", borderColor: "#58D3A5", color: "#FFFFFF", marginTop: 30 }}>Ок</Button>
         </Col>
     </>
     );
