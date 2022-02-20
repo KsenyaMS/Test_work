@@ -29,8 +29,10 @@ module.exports = {
                 '@card-padding-base': '10px',
                 
                 //Table
+                '@table-bg': '#F4F4F9',
                 '@table-header-color': '#FFFFFF',
                 '@table-header-bg': '#3F3D56',
+                '@table-header-sort-bg': '#3F3D56',
                 '@table-border-radius-base': '20px',
                 '@table-header-sort-active-bg': '#3F3D56',
                 '@table-fixed-header-sort-active-bg': 'hsv(0, 0, 96%)',

@@ -23,8 +23,8 @@ const PageMenu = () => {
                 shape="round"
                 size='large'
                 style={stateType}
-                onClick={() => setStateType({ ...stateType, background: "#3F3D56", borderColor: "#3F3D56", color: "#FFFFFF" })}
-                onBlur={() => setStateType({ ...stateType, background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" })}
+                onMouseEnter={() => setStateType({ ...stateType, background: "#3F3D56", borderColor: "#3F3D56", color: "#FFFFFF" })}
+                onMouseLeave={() => setStateType({ ...stateType, background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" })}
               >
                   Обновить
                   <SyncOutlined />
