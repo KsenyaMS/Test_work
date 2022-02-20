@@ -2,12 +2,16 @@ import 'antd/dist/antd.css';
 import { Button } from 'antd';
 import { useState } from 'react';
 
-const MenuButtons = ({value, type, onClick}) => {
-    const [state, setState] = useState({background: "#F4F4F9", borderColor: "#F4F4F9", color: "#3F3D56" });
+const MenuButtons = ({value, onClick}) => {
+    const [stateType, setStateType] = useState("default");
     return (
         <Button
-        type={type}
+        size='large'
+        type={stateType}
+        onFocus={() => setStateType("primary")}
+        onBlur={() => setStateType("default")}
         onClick={onClick}
+        style = {{marginLeft: 10}}
         >
         {value}
         </Button>

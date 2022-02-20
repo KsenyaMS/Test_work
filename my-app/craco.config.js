@@ -8,20 +8,25 @@ module.exports = {
         lessLoaderOptions: {
           lessOptions: {
             modifyVars: {
-                '@primary-color': '#58D3A5',
-                
-                //Button
-                '@btn-square-size': '40px',
 
+                //Button
                 '@btn-primary-bg': '#3F3D56',
                 '@btn-primary-color': '#FFFFFF',
 
                 '@btn-default-bg': '#F4F4F9',
                 '@btn-default-color': '#3F3D56',
                 '@btn-default-border': '#F4F4F9',
-                // '@btn-default-border': '#3F3D56',
 
                 '@btn-border-radius-base': '30px',
+
+                //Other
+                '@border-radius-base': '30px',
+                '@text-color': '#3F3D56',
+                '@primary-color': '#58D3A5',
+                
+                //Card
+                '@card-radius': '50px',
+                '@card-padding-base': '10px',
                 
                 //Table
                 '@table-header-color': '#FFFFFF',

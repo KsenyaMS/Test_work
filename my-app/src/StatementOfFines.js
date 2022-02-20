@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 import { Table, Col, Button } from 'antd';
 
-const StatementOfFines = ({data}) => {
+const StatementOfFines = () => {
     const columns = [
         {
           title: 'Дата',

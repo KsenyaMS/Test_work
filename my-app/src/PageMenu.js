@@ -2,40 +2,51 @@ import MenuButtons from './MenuButtons';
 import {Row, Button, Col } from 'antd';
 import { useState } from 'react';
 import { SyncOutlined  } from '@ant-design/icons';
+import StatementOfFines from './StatementOfFines';
+import Journal from './Journal';
+import TransactionLog from './TransactionLog';
 
 const PageMenu = () => {
-  const number = 2;
-  const [stateType, setStateType] = useState({type: "default", key: '0'});
-  const [state, setState] = useState({background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" });
+  const [state, setState] = useState('0');
+  const [stateType, setStateType] = useState({background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" });
     return (
       <>
-      <Row>
-        <Button
-        type={stateType.type}
-        onFocus={() => setStateType({...stateType, type: "primary", key: '1' })}
-        >
-          Ведомость штрафов
-        </Button>
-      <MenuButtons value = "Ведомость штрафов" type={stateType.type} onClick={() => setStateType({...stateType, type: "primary", key: '1' })}/>
-      <MenuButtons value = "Журнал транзакций"/>
-      <MenuButtons value = "Условия работы"/>
-      <MenuButtons value = "Журнал"/>
-      {stateType.key === '1' && (
-      <Col offset={11}>
-        <Button
-          type="primary"
-          shape="round"
-          size='large'
-          style={state}
-          onClick={() => setState({ ...state, background: "#3F3D56", borderColor: "#3F3D56", color: "#FFFFFF" })}
-          onBlur={() => setState({ ...state, background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" })}
-        >
-            Обновить
-            <SyncOutlined />
-        </Button>
-      </Col>
-      )}
-      </Row>
+        <Row>
+          <MenuButtons value = "Ведомость штрафов" onClick={() => setState('1')}/>
+          <MenuButtons value = "Журнал транзакций" onClick={() => setState('2')}/>
+          <MenuButtons value = "Условия работы" onClick={() => setState('3')}/>
+          <MenuButtons value = "Журнал" onClick={() => setState('4')}/>
+          {state !== '1' && (
+            <Col offset={11}>
+              <Button
+                type="primary"
+                shape="round"
+                size='large'
+                style={stateType}
+                onClick={() => setStateType({ ...stateType, background: "#3F3D56", borderColor: "#3F3D56", color: "#FFFFFF" })}
+                onBlur={() => setStateType({ ...stateType, background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" })}
+              >
+                  Обновить
+                  <SyncOutlined />
+              </Button>
+            </Col>
+          )}
+          {state === '1' && (
+            <Row align='center'>
+              <StatementOfFines/>
+            </Row>
+          )}
+          {state === '2' && (
+            <Row>
+              <TransactionLog/>
+            </Row>
+          )}
+          {state === '4' && (
+            <Row align='center'>
+              <Journal/>
+            </Row>
+          )}
+        </Row>
       </>
     );
 }
