@@ -42,7 +42,7 @@ const PersonData = () => {
                 <div>
                 <Space>
                     <ZoomButtons statusBtn="1" onClick={() => {setDeposit(deposit - 10)}}/>
-                        <Text style={{color: balance < 0 ? "#D35858" : "#58D3A5"}}>{deposit}</Text>
+                        <Text style={{color: deposit < 0 ? "#D35858" : "#58D3A5"}}>{deposit}</Text>
                     <ZoomButtons statusBtn="2" onClick={() => {setDeposit(deposit + 10)}} />
                 </Space>
                 </div>
@@ -52,7 +52,7 @@ const PersonData = () => {
                 <div>
                 <Space>
                     <ZoomButtons statusBtn="1" onClick={() => {setFreeBalance(freeBalance - 10)}}/>
-                        <Text style={{color: balance < 0 ? "#D35858" : "#58D3A5"}}>{freeBalance}</Text>
+                        <Text style={{color: freeBalance < 0 ? "#D35858" : "#58D3A5"}}>{freeBalance}</Text>
                     <ZoomButtons statusBtn="2" onClick={() => {setFreeBalance(freeBalance + 10)}} />
                 </Space>
                 </div>
