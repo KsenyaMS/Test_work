@@ -20,9 +20,11 @@ module.exports = {
                 '@btn-border-radius-base': '30px',
 
                 //Other
-                '@border-radius-base': '30px',
+                '@border-radius-base': '20px',
                 '@text-color': '#3F3D56',
                 '@primary-color': '#58D3A5',
+                '@select-item-active-bg': 'rgba(88, 211, 165, 0.16)',
+                '@input-bg': 'rgba(255, 255, 255, 0.01)',
                 
                 //Card
                 '@card-radius': '50px',

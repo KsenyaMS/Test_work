@@ -5,43 +5,33 @@ import { SyncOutlined  } from '@ant-design/icons';
 import StatementOfFines from './StatementOfFines';
 import Journal from './Journal';
 import TransactionLog from './TransactionLog';
+import UpdateButton from './UpdateButton';
 
 const PageMenu = () => {
-  const [state, setState] = useState('0');
-  const [stateType, setStateType] = useState({background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" });
+  let [state, setState] = useState({activeTabKey: "1", update: 0});
     return (
       <>
         <Row>
-          <MenuButtons value = "Ведомость штрафов" onClick={() => setState('1')}/>
-          <MenuButtons value = "Журнал транзакций" onClick={() => setState('2')}/>
-          <MenuButtons value = "Условия работы" onClick={() => setState('3')}/>
-          <MenuButtons value = "Журнал" onClick={() => setState('4')}/>
-          {state !== '1' && (
+          <MenuButtons value = "Ведомость штрафов" statusBtn={state.activeTabKey === "1"} onClick={() => setState({...state, activeTabKey: "1", update: state.update + 1})}/>
+          <MenuButtons value = "Журнал транзакций" statusBtn={state.activeTabKey === "2"} onClick={() => setState({...state, activeTabKey: "2", update: state.update + 1})}/>
+          <MenuButtons value = "Условия работы" statusBtn={state.activeTabKey === "3"} onClick={() => setState({...state, activeTabKey: "3", update: state.update + 1})}/>
+          <MenuButtons value = "Журнал" statusBtn={state.activeTabKey === "4"} onClick={() => setState({...state, activeTabKey: "4", update: state.update + 1})}/>
+          {state.activeTabKey !== '1' && (
             <Col offset={11}>
-              <Button
-                type="primary"
-                shape="round"
-                size='large'
-                style={stateType}
-                onMouseEnter={() => setStateType({ ...stateType, background: "#3F3D56", borderColor: "#3F3D56", color: "#FFFFFF" })}
-                onMouseLeave={() => setStateType({ ...stateType, background: "#FFFFFF", borderColor: "#3F3D56", color: "#3F3D56" })}
-              >
-                  Обновить
-                  <SyncOutlined />
-              </Button>
+              <UpdateButton/>
             </Col>
           )}
-          {state === '1' && (
+          {state.activeTabKey === '1' && (
             <Row align='center'>
               <StatementOfFines/>
             </Row>
           )}
-          {state === '2' && (
+          {state.activeTabKey === '2' && (
             <Row>
               <TransactionLog/>
             </Row>
           )}
-          {state === '4' && (
+          {state.activeTabKey === '4' && (
             <Row align='center'>
               <Journal/>
             </Row>
