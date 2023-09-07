@@ -1,15 +1,19 @@
 
-import PersonData from './PersonData';
-import PageMenu from './PageMenu';
-import {Divider } from 'antd';
+import PersonData from './components/drivercard/PersonData';
+import PageMenu from './components/drivercard/PageMenu';
+import {Divider, Switch } from 'antd';
 import './App.less';
+import DriverCard from './components/drivercard/DriverCard';
+import React from 'react';
 
-const App = () => (
-  <div className="App">
-    <PersonData />
-    <Divider />
-    <PageMenu />
-  </div>
-);
+function App() {
+  return (
+    <div className="App">
+      <React.Fragment>
+        <DriverCard/>
+      </React.Fragment>
+    </div>
+  )
+}
 
 export default App;

@@ -1,0 +1,27 @@
+.footer {
+	position: absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: #3F3D56;
+    color: white;
+}
+
+.header {
+	position: relative;
+    left:0;
+    top:0;
+    right:0;
+    background-color: #3F3D56;
+    box-shadow: 0 0 40px 10px rgb(0 100 100 / 0.2);
+}
+
+.ant-page-header-heading-title {
+    color: white;
+}
+
+.page-layout {
+    position: relative;
+    min-height: 100vh;
+    
+}
