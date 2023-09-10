@@ -8,18 +8,18 @@ export default function DriverCard() {
 
   return (
     <>
-        <Layout className="page-layout">
-            <Header className="header">
-                <PageHeader style={{padding: 5}} title="Карточка водителя"/>
-                <Divider style={{marginTop: '10px'}}/>
-            </Header>
-            <Content style={{margin: '8px'}}>
-                <PersonData />
-                <Divider />
-                <PageMenu />
-            </Content>
-            <Footer className="footer" style={{textAlign: 'right', fontSize: '0.8em'}}>Тестовое задание 2021</Footer>
-        </Layout>
+      <Layout className="page-layout">
+        <Header className="header">
+          <PageHeader style={{padding: 5}} title="Карточка водителя"/>
+          <Divider style={{marginTop: '10px'}}/>
+        </Header>
+        <Content style={{margin: '8px'}}>
+          <PersonData />
+          <Divider />
+          <PageMenu />
+        </Content>
+        <Footer className="footer" style={{textAlign: 'right', fontSize: '0.8em'}}>Тестовое задание 2021</Footer>
+      </Layout>
     </>
   );
 }
